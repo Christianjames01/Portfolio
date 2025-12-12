@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: #888;
+        }
+
+        .cert-card-picture {
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="back-nav">
+            <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        </nav>
+
+        <div class="page-header">
+            <h1>🏢 Companies</h1>
+            <p class="page-description">When not writing code, I focus on learning about emerging technologies, minimalism, and startup culture.</p>
+        </div>
+
+        <div class="cert-full-content">
+            <div class="cert-category">
+                <h2>Rivan IT</h2>
+                <div class="cert-pictures-grid">
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/rivanit.jpg" alt="Rivan IT Cebu" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/rivan1.jpg" alt="Company 2" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/rivan2.jpg" alt="Company 3" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/sir.jpg" alt="Company 4" class="cert-image-preview">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-category">
+                <h2>CodeChum</h2>
+                <div class="cert-pictures-grid">
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/codechum.jpg" alt="Company 5" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/cd1.jpg" alt="Company 6" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/codechum1.jpg" alt="Company 7" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/logos.jpg" alt="Company 8" class="cert-image-preview">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-category">
+                <h2>Worldtech Information Solutions</h2>
+                <div class="cert-pictures-grid">
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/worldtech.jpg" alt="Company 5" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/world1.jpg" alt="Company 6" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/world2.jpg" alt="Company 7" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/world3.jpg" alt="Company 8" class="cert-image-preview">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-category">
+                <h2>TaRSIER 117</h2>
+                <div class="cert-pictures-grid">
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/tag1.jpg" alt="Company 5" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/tag2.jpg" alt="Company 6" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/tag3.jpg" alt="Company 7" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/tag4.jpg" alt="Company 8" class="cert-image-preview">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-category">
+                <h2>Mata Technologies</h2>
+                <div class="cert-pictures-grid">
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/mata1.jpg" alt="Company 9" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/mata2.jpg" alt="Company 10" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/mata3.jpg" alt="Company 11" class="cert-image-preview">
+                    </div>
+                    <div class="cert-card-picture" onclick="openLightbox(this)">
+                        <img src="img/mata4.jpg" alt="Company 12" class="cert-image-preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Christian James B. Ortouste. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Christian James B. Ortouste</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Projects Page Specific Styles */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .project-card-full {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card-full:hover {
+            transform: translateY(-4px);
+            border-color: #333;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .project-languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .language-tag {
+            padding: 6px 12px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #e5e5e5;
+            transition: all 0.2s;
+        }
+
+        .language-tag:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .project-link:hover {
+            color: #60a5fa;
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Navigation -->
+        <nav class="back-nav">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>🚀 Projects</h1>
+            <p class="page-description">A collection of projects I've built and contributed to</p>
+        </div>
+
+        <!-- Projects Container -->
+        <div class="projects-container">
+            <!-- Project 1: Task Manager App -->
+            <div class="project-card-full">
+                <img src="img/taskmanager.jpg" alt="Task Manager Project" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Task Manager App</h2>
+                    <p class="project-description">
+                        A productivity app that helps users organize tasks, set deadlines, and track progress 
+                        with a user-friendly interface and real-time notifications.
+                    </p>
+                    <div class="project-languages">
+                        <span class="language-tag">JavaScript</span>
+                        <span class="language-tag">React</span>
+                        <span class="language-tag">PHP</span>
+                    </div>
+                </div>
+        </div>  
+
+            <div class="project-card-full">
+                <img src="img/dental.png" alt="E-Commerce Project" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Dental Clinic Appointment System</h2>
+                    <p class="project-description">
+                       A fully integrated dental scheduling system that simplifies patient booking,
+                        manages clinic operations, and ensures efficient, real-time coordination between staff and patients.
+                    </p>
+                    <div class="project-languages">
+                        <span class="language-tag">PHP</span>
+                        <span class="language-tag">HTML</span>
+                        <span class="language-tag">CSS</span>
+                        <span class="language-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <footer>
+            <p>© 2025 Christian James B. Ortouste. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

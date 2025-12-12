@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/game-details.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back Navigation -->
+        <nav class="back-nav">
+            <a href="hobbies.html" class="back-btn">← Back to Hobbies</a>
+        </nav>
+
+        <!-- Game Header -->
+        <div class="game-header">
+            <div class="game-icon">⚔️</div>
+            <div class="game-title-section">
+                <h1>Dota 2</h1>
+                <p class="game-subtitle">Multiplayer Online Battle Arena (MOBA)</p>
+                <div class="game-meta">
+                    <span class="meta-item">🎮 PC</span>
+                    <span class="meta-item">👥 5v5 Multiplayer</span>
+                    <span class="meta-item">⚡ MOBA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Content -->
+        <div class="game-content">
+            <!-- About Section -->
+            <div class="game-section">
+                <h2>About the Game</h2>
+                <p>Dota 2 is a free-to-play multiplayer online battle arena (MOBA) game developed by Valve. It's one of the most complex and rewarding competitive games, featuring over 120 unique heroes, deep strategic gameplay, and an incredibly high skill ceiling. Every match is different, requiring teamwork, decision-making, and mechanical skill to achieve victory.</p>
+            </div>
+
+            <!-- My Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Hours Played</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number">Ancient 6</div>
+                    <div class="stat-label">Peak MMR Rank</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">55%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">3000+</div>
+                    <div class="stat-label">Matches Played</div>
+                </div>
+            </div>
+
+            <!-- Favorite Heroes -->
+            <div class="game-section">
+                <h2>My Main Heroes</h2>
+                <div class="agents-grid">
+                    <div class="agent-card">
+                        <div class="agent-image" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/invo.jpg" alt="Invoker" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="agent-icon" style="display: none;">🔮</div>
+                        </div>
+                        <h3>Invoker</h3>
+                        <p>High-skill ceiling spellcaster with 10 unique abilities combining Quas, Wex, and Exort orbs.</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-image" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/meepo.jpg" alt="Meepo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="agent-icon" style="display: none;">👥</div>
+                        </div>
+                        <h3>Meepo</h3>
+                        <p>Micro-intensive agility hero that clones himself, requiring simultaneous control of multiple units.</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-image" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/puck.jpg" alt="Puck" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="agent-icon" style="display: none;">✨</div>
+                        </div>
+                        <h3>Puck</h3>
+                        <p>Elusive intelligence hero with blink abilities and dream coil for crowd control and escape.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Gallery -->
+            <div class="game-section">
+                <h2>Screenshots & Highlights</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/prof.jpg" alt="Dota 2 Profile">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/hist.jpg" alt="Match History">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/gl.jpg" alt="Gameplay Screenshot">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/ancient 6.jpg" alt="Ancient 6 Rank">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What I Love -->
+            <div class="game-section">
+                <h2>What I Love About Dota 2</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🧠</div>
+                        <div class="feature-content">
+                            <h3>Strategic Depth</h3>
+                            <p>Every game requires drafting strategy, itemization choices, and tactical decision-making.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <h3>Hero Diversity</h3>
+                            <p>120+ unique heroes with different playstyles keep the game fresh and exciting.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-content">
+                            <h3>Teamwork & Coordination</h3>
+                            <p>Success requires excellent communication and synergy with teammates.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-content">
+                            <h3>Endless Skill Growth</h3>
+                            <p>The game's complexity means there's always something new to learn and improve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notable Achievements -->
+            <div class="game-section">
+                <h2>Notable Achievements</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/11.jpg" alt="Ancient Rank Achievement">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/22.jpg" alt="Rampage Achievement">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/33.jpg" alt="Hero Master Achievement">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder" onclick="this.classList.toggle('zoomed')">
+                            <img src="img/44.jpg" alt="Team Captain Achievement">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferred Roles -->
+            <div class="game-section">
+                <h2>Preferred Roles</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <div class="role-icon">⚔️</div>
+                        <h3>Mid Lane</h3>
+                        <p>Core position focused on gaining early advantage and snowballing.</p>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">🛡️</div>
+                        <h3>Offlane</h3>
+                        <p>Tanky initiator role that creates space for the team.</p>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">💎</div>
+                        <h3>Carry</h3>
+                        <p>Late-game powerhouse that scales with farm and items.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3>Want to party queue together?</h3>
+                <p>I'm always looking for teammates to play ranked or casual games. Feel free to reach out if you want to team up!</p>
+                <a href="contact.html" class="cta-btn">Get in Touch →</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Christian James B. Ortouste. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

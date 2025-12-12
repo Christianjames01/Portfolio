@@ -1,0 +1,276 @@
+/* Hobbies Page Specific Styles */
+
+.hobbies-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+/* Featured Hobby Card */
+.hobby-card.featured {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.hobby-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.2s;
+}
+
+.hobby-card:hover {
+    background: #141414;
+    border-color: #2a2a2a;
+}
+
+.hobby-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.hobby-card.featured .hobby-icon {
+    font-size: 40px;
+}
+
+.hobby-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.hobby-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.hobby-description {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.hobby-card p {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.7;
+}
+
+/* Hobby Details */
+.hobby-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.hobby-tag {
+    padding: 6px 12px;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #e5e5e5;
+    transition: all 0.2s;
+}
+
+.hobby-tag:hover {
+    background: #141414;
+    border-color: #2a2a2a;
+}
+
+/* Games List */
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.game-item {
+    padding: 10px 12px;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #e5e5e5;
+    transition: all 0.2s;
+}
+
+.game-item:hover {
+    background: #141414;
+    border-color: #2a2a2a;
+}
+
+/* Hobbies Grid */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Gaming Stats Section */
+.stats-section {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.stats-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stat-card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.stat-card:hover {
+    background: #141414;
+    border-color: #2a2a2a;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #888;
+    font-weight: 500;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+}
+
+.cta-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.cta-section p {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.cta-btn:hover {
+    background: #e5e5e5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hobby-card.featured {
+        padding: 24px;
+    }
+
+    .hobby-card.featured .hobby-icon {
+        font-size: 32px;
+    }
+
+    .hobby-card h2 {
+        font-size: 20px;
+    }
+
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .games-list {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-section {
+        padding: 24px;
+    }
+
+    .cta-section {
+        padding: 24px;
+    }
+
+    .cta-section h3 {
+        font-size: 18px;
+    }
+}
