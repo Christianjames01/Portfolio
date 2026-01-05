@@ -3,9 +3,630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Christian James B. Ortouste - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #000000;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        .header-section {
+            margin-bottom: 32px;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .profile-img.default {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .profile-img.hover {
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .profile-img-wrapper:hover .profile-img.hover {
+            opacity: 1;
+        }
+
+        .profile-img-wrapper:hover .profile-img.default {
+            opacity: 0;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .name-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .name-row h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #e5e5e5;
+            margin-bottom: 16px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #e5e5e5;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #333;
+            color: #e5e5e5;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            border-color: #444;
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .bento-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        /* Card Layouts */
+        .about-card {
+            grid-column: span 4;
+        }
+
+        .stellar-experience-card {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .tech-card {
+            grid-column: span 4;
+        }
+
+        .beyond-coding-card {
+            grid-column: span 2;
+            padding: 10px;
+        }
+
+        .projects-card {
+            grid-column: span 4;
+        }
+
+        .certifications-card {
+            grid-column: span 3;
+        }
+
+        .bottom-full-card {
+            grid-column: span 6;
+        }
+
+        /* Card Headers */
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .card-header > div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-header .icon {
+            font-size: 16px;
+        }
+
+        .card-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .card-header.inline-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            justify-content: flex-start;
+        }
+
+        .card-header.inline-header .icon {
+            font-size: 20px;
+        }
+
+        .card-header.inline-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+
+        .view-all {
+            font-size: 13px;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .view-all:hover {
+            color: #fff;
+        }
+
+        /* About Card */
+        .about-card p {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Experience List */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .exp-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            padding: 12px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .exp-item:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+        }
+
+        .exp-item.active {
+            background: #0a1929;
+            border-color: #1e40af;
+        }
+
+        .exp-dot {
+            width: 8px;
+            height: 8px;
+            background: #444;
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .exp-item.active .exp-dot {
+            background: #3b82f6;
+        }
+
+        .exp-content {
+            flex: 1;
+        }
+
+        .exp-content h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: #fff;
+        }
+
+        .exp-content p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .year {
+            padding: 4px 10px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        /* Tech Stack */
+        .tech-section {
+            margin-bottom: 20px;
+        }
+
+        .tech-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #e5e5e5;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .project-item {
+            padding: 16px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .project-item:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+            transform: translateY(-2px);
+        }
+
+        .project-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        .project-item p {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .project-url {
+            font-size: 11px;
+            color: #666;
+            font-family: 'Courier New', monospace;
+            background: #141414;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Certifications */
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cert-item {
+            padding: 12px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+        }
+
+        .cert-item h3 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: #fff;
+        }
+
+        .cert-item p {
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* Pictures Section */
+        .cert-pictures-grid-single {
+            width: 100%;
+        }
+
+        .cert-card-picture-single {
+            width: 100%;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.2s;
+        }
+
+        .cert-card-picture-single:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+            transform: translateY(-2px);
+        }
+
+        .cert-card-picture-single .cert-image-preview {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+            padding: 6px;
+        }
+
+        .beyond-coding-card .cert-card-picture-single {
+            padding: 8px;
+        }
+
+        .beyond-coding-card .cert-image-preview {
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .beyond-coding-card .cert-pictures-grid-single > p {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: #fff;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        /* Bottom Grid */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .bottom-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bottom-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .bottom-header h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .link-list a {
+            padding: 10px 12px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e5e5e5;
+            font-size: 12px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .link-list a:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #141414;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .speaking-text {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .get-in-touch {
+            font-size: 12px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .get-in-touch:hover {
+            text-decoration: underline;
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+            align-self: flex-start;
+        }
+
+        .resume-btn:hover {
+            background: #141414;
+            border-color: #2a2a2a;
+            transform: translateY(-2px);
+        }
+
+        .contact-list a {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contact-list strong {
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .contact-list small {
+            font-size: 10px;
+            color: #888;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #222;
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-card,
+            .stellar-experience-card,
+            .tech-card,
+            .beyond-coding-card,
+            .projects-card,
+            .certifications-card,
+            .bottom-full-card {
+                grid-column: span 1;
+            }
+            
+            .projects-grid,
+            .bottom-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -60,7 +681,7 @@
                         <div class="exp-dot"></div>
                         <div class="exp-content">
                             <h3>Installation of Full Bridge Simulator System</h3>
-                            <p>Installion of Simulator for BSMT</p>
+                            <p>Installation of Simulator for BSMT</p>
                         </div>
                         <span class="year">2025</span>
                     </div>
@@ -92,7 +713,7 @@
                         <div class="exp-dot"></div>
                         <div class="exp-content">
                             <h3>Technical Assistant</h3>
-                            <p>Student Assitant at ICT Office</p>
+                            <p>Student Assistant at ICT Office</p>
                         </div>
                         <span class="year">2023</span>
                     </div>
@@ -219,15 +840,15 @@
                     </div>
                     <div class="cert-item">
                         <h3>Python</h3>
-                        <p>Certfication</p>
+                        <p>Certification</p>
                     </div>
                     <div class="cert-item">
                         <h3>C</h3>
-                        <p>Certfication</p>
+                        <p>Certification</p>
                     </div>
                     <div class="cert-item">
                         <h3>React</h3>
-                        <p>Certfication</p>
+                        <p>Certification</p>
                     </div>
                 </div>
             </div>
