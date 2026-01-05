@@ -1480,3 +1480,37 @@ footer {
         font-size: 40px;
     }
 }
+.journal-footer {
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.view-journal-btn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #000000 0%, #000000 100%);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    align-self: flex-start;
+}
+
+.view-journal-btn:hover {
+    background: linear-gradient(135deg, #000000 0%, #000000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(134, 136, 138, 0.4);
+}
+
+.view-journal-btn:active {
+    transform: translateY(0);
+}

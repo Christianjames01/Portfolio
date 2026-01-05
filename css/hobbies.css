@@ -115,18 +115,39 @@
 }
 
 .game-item {
-    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
     background: #0a0a0a;
     border: 1px solid #1a1a1a;
     border-radius: 8px;
     font-size: 13px;
     color: #e5e5e5;
+    text-decoration: none;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .game-item:hover {
     background: #141414;
-    border-color: #2a2a2a;
+    border-color: #3b82f6;
+    transform: translateX(2px);
+}
+
+.game-name {
+    font-weight: 500;
+}
+
+.view-arrow {
+    color: #666;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.game-item:hover .view-arrow {
+    color: #3b82f6;
+    transform: translateX(3px);
 }
 
 /* Hobbies Grid */

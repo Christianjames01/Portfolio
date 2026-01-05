@@ -45,6 +45,9 @@
                     <p>This experience made me realize the profound responsibility IT professionals have when building critical systems. It's not just about code - it's about the lives depending on that code working flawlessly.</p>
                 </div>
                 <div class="journal-footer">
+                    <button class="view-journal-btn" onclick="openScannedJournal('img/tar123.jpg')">
+                        📄 View Scanned Journal
+                    </button>
                     <div class="journal-tags">
                         <span class="tag">TaRSIER 117</span>
                         <span class="tag">Emergency Response</span>
@@ -61,7 +64,7 @@
                 </div>
                 <div class="journal-header">
                     <div class="journal-meta">
-                        <span class="journal-date">November 21, 2025</span>
+                        <span class="journal-date">November 20, 2025</span>
                         <span class="journal-category">EdTech Experience</span>
                     </div>
                     <h2>Discovering CodeChum: A Student's Programming Journey</h2>
@@ -80,6 +83,9 @@
                     <p>CodeChum taught me that programming isn't just about memorizing syntax - it's about problem-solving. As a student, having this tool has made me more confident in my coding abilities and better prepared for real-world development work.</p>
                 </div>
                 <div class="journal-footer">
+                    <button class="view-journal-btn" onclick="openScannedJournal('img/chums.jpg')">
+                        📄 View Scanned Journal
+                    </button>
                     <div class="journal-tags">
                         <span class="tag">CodeChum</span>
                         <span class="tag">Student Life</span>
@@ -96,7 +102,7 @@
                 </div>
                 <div class="journal-header">
                     <div class="journal-meta">
-                        <span class="journal-date">November 21, 2025</span>
+                        <span class="journal-date">November 20, 2025</span>
                         <span class="journal-category">Industry Visit</span>
                     </div>
                     <h2>Industry Exposure at Rivan School of Technology</h2>
@@ -115,6 +121,9 @@
                     <p>This visit made me realize that college education is just the foundation - specialized training like what Rivan IT offers is what makes you industry-ready. I'm now seriously considering pursuing certifications alongside my degree to be more competitive.</p>
                 </div>
                 <div class="journal-footer">
+                    <button class="view-journal-btn" onclick="openScannedJournal('img/its.jpg')">
+                        📄 View Scanned Journal
+                    </button>
                     <div class="journal-tags">
                         <span class="tag">Rivan IT</span>
                         <span class="tag">Career Planning</span>
@@ -150,6 +159,9 @@
                     <p>This experience expanded my view of what's possible in tech. As a student, I was thinking too small - just websites and mobile apps. MATA showed me that Filipino developers can work on immersive technologies that compete globally.</p>
                 </div>
                 <div class="journal-footer">
+                    <button class="view-journal-btn" onclick="openScannedJournal('img/mats.jpg')">
+                        📄 View Scanned Journal
+                    </button>
                     <div class="journal-tags">
                         <span class="tag">MATA Technologies</span>
                         <span class="tag">Virtual Reality</span>
@@ -166,7 +178,7 @@
                 </div>
                 <div class="journal-header">
                     <div class="journal-meta">
-                        <span class="journal-date">November 21, 2025</span>
+                        <span class="journal-date">November 19, 2025</span>
                         <span class="journal-category">Career Guidance</span>
                     </div>
                     <h2>Career Planning: Learning from Worldtech Information Solutions</h2>
@@ -185,6 +197,9 @@
                     <p>As a student, this visit helped me create a roadmap: finish my degree, get CompTIA A+ and Network+, then work toward CCNA. Worldtech made me realize that career success in IT requires both formal education and professional certifications.</p>
                 </div>
                 <div class="journal-footer">
+                    <button class="view-journal-btn" onclick="openScannedJournal('img/tec.jpg')">
+                        📄 View Scanned Journal
+                    </button>
                     <div class="journal-tags">
                         <span class="tag">Worldtech</span>
                         <span class="tag">Career Planning</span>
@@ -195,10 +210,16 @@
             </article>
         </div>
 
-        <!-- Image Modal -->
+        <!-- Image Modal for Main Images -->
         <div id="imageModal" class="image-modal" onclick="closeImageModal()">
             <span class="modal-close">&times;</span>
             <img class="modal-content" id="modalImage">
+        </div>
+
+        <!-- Image Modal for Scanned Journals -->
+        <div id="scannedModal" class="image-modal" onclick="closeScannedModal()">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="scannedImage">
         </div>
 
         <footer>
@@ -207,6 +228,7 @@
     </div>
 
     <script>
+        // Function to open main journal image modal
         function openImageModal(wrapper) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
@@ -216,30 +238,54 @@
             modalImg.src = img.src;
             modalImg.alt = img.alt;
             
-            // Add loaded class for animation
             setTimeout(() => {
                 modalImg.classList.add('loaded');
             }, 10);
             
-            // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
         }
 
+        // Function to close main image modal
         function closeImageModal() {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             
             modalImg.classList.remove('loaded');
             modal.style.display = 'none';
-            
-            // Restore body scroll
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal with Escape key
+        // Function to open scanned journal modal
+        function openScannedJournal(imagePath) {
+            const modal = document.getElementById('scannedModal');
+            const modalImg = document.getElementById('scannedImage');
+            
+            modal.style.display = 'flex';
+            modalImg.src = imagePath;
+            modalImg.alt = 'Scanned Journal';
+            
+            setTimeout(() => {
+                modalImg.classList.add('loaded');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close scanned journal modal
+        function closeScannedModal() {
+            const modal = document.getElementById('scannedModal');
+            const modalImg = document.getElementById('scannedImage');
+            
+            modalImg.classList.remove('loaded');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeImageModal();
+                closeScannedModal();
             }
         });
     </script>
